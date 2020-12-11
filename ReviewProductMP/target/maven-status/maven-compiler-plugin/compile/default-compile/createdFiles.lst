@@ -1,0 +1,9 @@
+com/mycompany/reviewproductmp/service/CategoryClient.class
+com/mycompany/reviewproductmp/entity/Product_.class
+com/mycompany/reviewproductmp/config/BootStrap.class
+com/mycompany/reviewproductmp/config/CrossOriginResourceSharingFilter.class
+com/mycompany/reviewproductmp/entity/Product.class
+com/mycompany/reviewproductmp/service/HealthCheckService.class
+com/mycompany/reviewproductmp/model/ProductModel.class
+com/mycompany/reviewproductmp/config/Producers.class
+com/mycompany/reviewproductmp/service/ProductResource.class

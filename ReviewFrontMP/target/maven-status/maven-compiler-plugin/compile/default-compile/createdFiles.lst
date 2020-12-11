@@ -1,0 +1,8 @@
+com/mycompany/reviewfrontmp/model/Product.class
+servlets/ProductServlet.class
+com/mycompany/reviewfrontmp/service/HealthCheckService.class
+com/mycompany/reviewfrontmp/config/BootStrap.class
+com/mycompany/reviewfrontmp/service/ProductClient.class
+com/mycompany/reviewfrontmp/config/Producers.class
+com/mycompany/reviewfrontmp/config/CrossOriginResourceSharingFilter.class
+com/mycompany/reviewfrontmp/service/ExampleService.class

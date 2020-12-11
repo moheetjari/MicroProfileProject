@@ -1,0 +1,3 @@
+#!/bin/sh
+mvn clean package && docker build -t 22012/ReviewProductMP .
+docker rm -f ReviewProductMP 2>/dev/null || true && docker run -it --name ReviewProductMP -p 8080:8080 -p 4848:4848 -p 8181:8181 --name ReviewProductMP 22012/ReviewProductMP
