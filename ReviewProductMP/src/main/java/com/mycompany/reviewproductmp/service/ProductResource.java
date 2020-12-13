@@ -5,10 +5,9 @@
  */
 package com.mycompany.reviewproductmp.service;
 
-import com.mycompany.reviewproductmp.entity.Product;
 import com.mycompany.reviewproductmp.model.ProductModel;
 import java.util.Collection;
-import javax.annotation.security.RolesAllowed;
+import java.util.List;
 import javax.ws.rs.Path;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -34,7 +33,7 @@ public class ProductResource {
     @GET
 //    @RolesAllowed("Admin")
     @Produces(MediaType.APPLICATION_JSON)
-    public Collection<Product> getAvailableProducts() {
+    public List<Object[]> getAvailableProducts() {
         System.out.println("Entered in product Resource..");
         Collection<Integer> allids = categoryclient.getAvailableProductIds();
         return product.getAvailableProducts(allids);

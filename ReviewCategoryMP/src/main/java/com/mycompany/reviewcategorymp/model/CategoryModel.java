@@ -43,7 +43,6 @@ public class CategoryModel {
         for (Category c : categories) {
             availablIds.add(c.getCategoryId());
         }
-
         return availablIds;
     }
 

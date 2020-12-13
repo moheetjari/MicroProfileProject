@@ -2,6 +2,7 @@
 /home/mohit/NetBeansProjects/ReviewProductMP/src/main/java/com/mycompany/reviewproductmp/config/BootStrap.java
 /home/mohit/NetBeansProjects/ReviewProductMP/src/main/java/com/mycompany/reviewproductmp/config/Producers.java
 /home/mohit/NetBeansProjects/ReviewProductMP/src/main/java/com/mycompany/reviewproductmp/config/CrossOriginResourceSharingFilter.java
+/home/mohit/NetBeansProjects/ReviewProductMP/src/main/java/com/mycompany/reviewproductmp/entity/Category.java
 /home/mohit/NetBeansProjects/ReviewProductMP/src/main/java/com/mycompany/reviewproductmp/service/package-info.java
 /home/mohit/NetBeansProjects/ReviewProductMP/src/main/java/com/mycompany/reviewproductmp/model/ProductModel.java
 /home/mohit/NetBeansProjects/ReviewProductMP/src/main/java/com/mycompany/reviewproductmp/service/HealthCheckService.java

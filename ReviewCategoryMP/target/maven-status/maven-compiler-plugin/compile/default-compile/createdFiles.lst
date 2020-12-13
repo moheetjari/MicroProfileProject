@@ -6,3 +6,4 @@ com/mycompany/reviewcategorymp/config/Producers.class
 com/mycompany/reviewcategorymp/entity/Category.class
 com/mycompany/reviewcategorymp/service/HealthCheckService.class
 com/mycompany/reviewcategorymp/service/CategoryResource.class
+servlets/CategoryServlet.class

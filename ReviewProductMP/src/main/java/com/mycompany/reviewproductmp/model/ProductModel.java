@@ -5,12 +5,15 @@
  */
 package com.mycompany.reviewproductmp.model;
 
+import com.mycompany.reviewproductmp.entity.Category;
 import com.mycompany.reviewproductmp.entity.Product;
 import java.util.Collection;
+import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 /**
  *
@@ -24,6 +27,10 @@ public class ProductModel {
     Collection<Product> products;
     Collection<Product> availableProducts;
 
+    public ProductModel() {
+        em = Persistence.createEntityManagerFactory("ProductPU").createEntityManager();
+    }
+
     public EntityManager getEm() {
         return em;
     }
@@ -32,12 +39,9 @@ public class ProductModel {
         this.em = em;
     }
 
-    public Collection<Product> getAvailableProducts(Collection<Integer> ids) {
-
+    public List<Object[]> getAvailableProducts(Collection<Integer> ids) {
         String allids = convertIntCollectionToString(ids);
-
-        availableProducts = em.createQuery("SELECT p from Product p WHERE p.ProductId IN (" + allids + ")").getResultList();
-        return availableProducts;
+        return em.createNativeQuery("SELECT * FROM product p WHERE p.CategoryId IN (" + allids + ")").getResultList();
     }
 
     private String convertIntCollectionToString(Collection<Integer> ids) {
@@ -50,10 +54,6 @@ public class ProductModel {
 
     public void setAvailableProducts(Collection<Product> availableProducts) {
         this.availableProducts = availableProducts;
-    }
-
-    public ProductModel() {
-        em = Persistence.createEntityManagerFactory("ProductPU").createEntityManager();
     }
 
     public Collection<Product> getProducts() {

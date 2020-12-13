@@ -5,11 +5,10 @@
  */
 package servlets;
 
-import com.mycompany.reviewfrontmp.model.Product;
 import com.mycompany.reviewfrontmp.service.ProductClient;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Collection;
+import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +25,7 @@ public class ProductServlet extends HttpServlet {
     @Inject
     @RestClient
     ProductClient productclient;
-    Collection<Product> products;
+    List<Object[]> products;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -50,11 +49,11 @@ public class ProductServlet extends HttpServlet {
             out.println("<body>");
             out.println("<h1>Servlet ProductServlet at " + request.getContextPath() + "</h1>");
             out.println("<table border ='1'>");
-            out.println("<tr><td>Product Name</td><td>Reference</td>");
+            out.println("<tr><td>Product Name</td>");
             products = productclient.getAvailableProducts();
 
-            for (Product p : products) {
-                out.println("<tr><td>" + p.getProductname() + "</td><td>" + p.getReferenceLink() + "</td></tr>");
+            for (Object[] o : products) {
+                out.println("<tr><td>" + o[2] + "</td></tr>");
             }
             out.println("</table>");
             out.println("</body>");

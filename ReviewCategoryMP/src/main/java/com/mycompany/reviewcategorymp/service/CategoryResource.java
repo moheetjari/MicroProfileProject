@@ -5,6 +5,7 @@
  */
 package com.mycompany.reviewcategorymp.service;
 
+import com.mycompany.reviewcategorymp.model.CategoryModel;
 import java.util.Collection;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
@@ -23,11 +24,12 @@ import javax.ws.rs.core.MediaType;
 public class CategoryResource {
 
     @Inject
-    CategoryResource category;
+    CategoryModel category;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Collection<Integer> getAvailableCategoryIds() {
-        return category.getAvailableCategoryIds();
+        System.out.println(category.getAvailablIds());
+        return category.getAvailablIds();
     }
 }

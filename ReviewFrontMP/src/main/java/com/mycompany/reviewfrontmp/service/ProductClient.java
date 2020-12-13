@@ -7,6 +7,7 @@ package com.mycompany.reviewfrontmp.service;
 
 import com.mycompany.reviewfrontmp.model.Product;
 import java.util.Collection;
+import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -25,5 +26,5 @@ public interface ProductClient {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Collection<Product> getAvailableProducts();
+    public List<Object[]> getAvailableProducts();
 }
