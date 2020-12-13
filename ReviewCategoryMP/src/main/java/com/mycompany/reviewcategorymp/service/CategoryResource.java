@@ -7,6 +7,7 @@ package com.mycompany.reviewcategorymp.service;
 
 import com.mycompany.reviewcategorymp.model.CategoryModel;
 import java.util.Collection;
+import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -27,6 +28,7 @@ public class CategoryResource {
     CategoryModel category;
 
     @GET
+    @RolesAllowed("Admin")
     @Produces(MediaType.APPLICATION_JSON)
     public Collection<Integer> getAvailableCategoryIds() {
         System.out.println(category.getAvailablIds());

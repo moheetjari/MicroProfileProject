@@ -6,11 +6,15 @@
 package com.mycompany.reviewproductmp.service;
 
 import java.util.Collection;
+import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import org.eclipse.microprofile.config.Config;
+import org.eclipse.microprofile.config.ConfigProvider;
+import org.eclipse.microprofile.rest.client.annotation.ClientHeaderParam;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 /**
@@ -23,6 +27,16 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 public interface CategoryClient {
 
     @GET
+    @ClientHeaderParam(name = "authorization", value = "{generateJWTToken}")
+    @RolesAllowed("Admin")
     @Produces(MediaType.APPLICATION_JSON)
     Collection<Integer> getAvailableProductIds();
+
+    default String generateJWTToken() {
+        RawToken raw = new RawToken();
+        Config config = ConfigProvider.getConfig();
+        String token = "Bearer " + RawToken.getRtoken();
+        System.out.println("Stock Token = " + token);
+        return token;
+    }
 }

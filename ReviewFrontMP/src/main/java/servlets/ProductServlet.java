@@ -50,18 +50,22 @@ public class ProductServlet extends HttpServlet {
             out.println("<h1>Servlet ProductServlet at " + request.getContextPath() + "</h1>");
             out.println("<table border ='1'>");
             out.println("<tr><td>Product Name</td>");
-            products = productclient.getAvailableProducts();
+            try {
+                products = productclient.getAvailableProducts();
 
-            for (Object[] o : products) {
-                out.println("<tr><td>" + o[2] + "</td></tr>");
+                for (Object[] o : products) {
+                    out.println("<tr><td>" + o[2] + "</td></tr>");
+                }
+                out.println("</table>");
+            } catch (Exception e) {
+                out.println("<tr><td colspan='3'> You are not Authorized to view the Product</td><tr>");
             }
-            out.println("</table>");
             out.println("</body>");
             out.println("</html>");
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *

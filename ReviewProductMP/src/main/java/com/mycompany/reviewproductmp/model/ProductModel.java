@@ -5,7 +5,6 @@
  */
 package com.mycompany.reviewproductmp.model;
 
-import com.mycompany.reviewproductmp.entity.Category;
 import com.mycompany.reviewproductmp.entity.Product;
 import java.util.Collection;
 import java.util.List;
@@ -13,7 +12,6 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
-import javax.persistence.Query;
 
 /**
  *
