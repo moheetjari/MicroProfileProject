@@ -1,0 +1,10 @@
+com/mycompany/testdepartment/entity/DepartmentTB.class
+com/mycompany/testdepartment/service/HealthCheckService.class
+com/mycompany/testdepartment/model/DepartmentModel.class
+com/mycompany/testdepartment/entity/DepartmentTB_.class
+com/mycompany/testdepartment/service/ExampleService.class
+com/mycompany/testdepartment/service/DepartmentResource.class
+com/mycompany/testdepartment/config/CrossOriginResourceSharingFilter.class
+servlets/TestServlet.class
+com/mycompany/testdepartment/config/BootStrap.class
+com/mycompany/testdepartment/config/Producers.class

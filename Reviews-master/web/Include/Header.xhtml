@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+
+    </h:head>
+    <h:body>
+        <div id="top">
+            <ui:insert name="top">
+                <meta charset="utf-8"/>
+                <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+                <title>Sasna - Multipurpose Business HTML Template</title>
+                <meta name="description" content=""/>
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+                <link rel="apple-touch-icon" href="assets/images/favicon.png"/>
+                <link rel="shortcut icon" href="assets/images/favicon.ico"/>
+
+                <!-- Google Font (font-family: 'Open Sans', sans-serif;) -->
+                <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet"/>
+                <!-- Google Font (font-family: 'Roboto', sans-serif;) -->
+                <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"/>
+
+                <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+                <link rel="stylesheet" href="assets/css/plugins.css"/>
+                <link rel="stylesheet" href="assets/css/style.css"/>
+
+                <!-- Please Remove this line after choosing color file -->
+                <link rel="stylesheet" href="assets/css/tm-customizer.css"/>
+                <link rel="stylesheet" href="#" data-color-css=""/>
+
+                <link rel="stylesheet" href="assets/css/custom.css"/>
+            </ui:insert>
+        </div>
+        <div id="left">
+            <ui:insert name="left">
+                <div id="section-home-area" class="header">
+
+                    <!-- Header Top Area -->
+                    <div class="header-toparea">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-7 col-sm-8 col-12">
+                                    <div class="header-topinfo">
+                                        <ul>
+                                            <li><a href="tel://+1-800-915-6270"><i class="flaticon-phone-call"></i>
+                                                    1-800-915-6270</a></li>
+                                            <li><a href="mailto://contact@example.com"><i class="flaticon-envelope"></i>
+                                                    contact@example.com</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-sm-4 col-12">
+                                    <div class="header-topsocial">
+                                        <ul>
+                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-skype"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--// Header Top Area -->
+
+                    <!-- Header Bottom Area -->
+                    <div class="header-bottomarea" >
+                        <div class="container">
+                            <div class="header-bottominner">
+                                <div class="header-logo" style="height: 65px;margin-top: 15px">
+                                    <a href="index.html">
+                                        <img src="assets/images/logo/logo-dark.png" alt="logo"/>
+                                    </a>
+
+                                </div>
+                                <div>
+                                    <p:commandButton onclick="fnLogin()" value="LOGIN"></p:commandButton>
+                                </div>   
+
+                            </div>
+                            <div class="header-mobilemenu clearfix">
+                                <div class="tm-mobilenav"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--// Header Bottom Area -->
+
+                </div>
+                <div style="height: 25px"></div>
+            </ui:insert>
+        </div>
+    </h:body>
+    <script type="text/javascript">
+        function fnLogin() {
+            window.location.href = "Login.xhtml"
+        }
+    </script>
+</html>
+
+

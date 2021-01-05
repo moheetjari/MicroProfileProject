@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <div id="top">
+        <ui:insert name="top">
+            <ui:include src="Include/Header.xhtml" />
+        </ui:insert>
+    </div>
+    <h:outputScript library="primefaces" name="jquery/jquery.js" target="head" />
+    <h:outputScript library="primefaces" name="jquery/jquery-plugins.js" target="head" />
+    <style>
+        a:link{
+            color: black;
+        };
+        a:hover{
+            color: #978888;
+        };
+        a:active{
+            color: white;
+        };
+    </style>
+
+    <div class="tm-section portfolio-area bg-white tm-padding-section">
+        <h:form id="news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div style="background: #cccc;
+                             width: 1100px;
+                             height: 50px;
+                             box-shadow: 5px 1px 5px aqua;
+                             font-size: 34px;
+                             font-weight: 800;
+                             box-sizing: border-box;
+                             border: 1px solid cornflowerblue;
+                             padding: 7px 20px;">
+                            <p:commandLink value="Technology">
+                                <f:ajax event="click" listener="#{newsManagedBean.getAllNewsByCategory('technology')}" render="news"/>
+                            </p:commandLink>
+                            &nbsp;&nbsp;
+                            <p:commandLink value="Sports">
+                                <f:ajax event="click" listener="#{newsManagedBean.getAllNewsByCategory('sports')}" render="news"/>
+                            </p:commandLink>
+                            &nbsp;&nbsp;
+                            <p:commandLink value="Science">
+                                <f:ajax event="click" listener="#{newsManagedBean.getAllNewsByCategory('science')}" render="news"/>
+                            </p:commandLink>
+                            &nbsp;&nbsp;
+                            <p:commandLink value="Health">
+                                <f:ajax event="click" listener="#{newsManagedBean.getAllNewsByCategory('health')}" render="news"/>
+                            </p:commandLink>
+                            &nbsp;&nbsp;
+                            <p:commandLink value="Entertainment">
+                                <f:ajax event="click" listener="#{newsManagedBean.getAllNewsByCategory('entertainment')}" render="news"/>
+                            </p:commandLink>
+                            &nbsp;&nbsp;
+                            <p:commandLink value="Business">
+                                <f:ajax event="click" listener="#{newsManagedBean.getAllNewsByCategory('business')}" render="news"/>
+                            </p:commandLink>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row tm-portfolio-wrapper">
+
+                <!-- Portfolio Single -->
+                <c:forEach var="i" items="${newsManagedBean.lstNews}">
+
+                    <div class="col-lg-4 col-md-6 col-12 tm-portfolio-item portfolio-business portfolio-careative" style="width: 80%">
+                        <div class="tm-portfolio mt-30">
+                            <div class="tm-portfolio-image">
+                                <img src="${i.urlToImage}" alt="portfolio image"/>
+                            </div>
+                            <div class="tm-portfolio-content">
+                                <ul class="tm-portfolio-actions">
+                                    <li class="link-button">
+                                        <a href="portfolio-details.html"><i class="fas fa-link"></i></a>
+                                    </li>
+                                    <li class="zoom-button">
+                                        <a href="${i.urlToImage}"><i class="fas fa-search-plus"></i></a>
+                                    </li>
+                                </ul>
+                                <p><a href="${i.url}">${i.description}</a></p>
+                                <!--<h6><a href="portfolio.html"> ${i.description} </a></h6>-->
+                                <p><a href="portfolio.html"> -${i.publishedAt} </a></p>
+                            </div>
+                            <div>
+                                <p>${i.title}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </c:forEach>
+
+
+
+
+                <!--// Portfolio Single -->
+
+                <!--                <div class="col-lg-4 col-md-6 col-12 tm-portfolio-item portfolio-business portfolio-technology">
+                                    <div class="tm-portfolio mt-30">
+                                        <div class="tm-portfolio-image">
+                                            <img src="assets/images/portfolio/portfolio-image-3.jpg" alt="portfolio image"/>
+                                        </div>
+                                        <div class="tm-portfolio-content">
+                                            <ul class="tm-portfolio-actions">
+                                                <li class="link-button">
+                                                    <a href="portfolio-details-video.html"><i class="fas fa-link"></i></a>
+                                                </li>
+                                                <li class="zoom-button">
+                                                    <a href="https://www.youtube.com/watch?v=Sv511KEiIJQ"><i class="fas fa-play"></i></a>
+                                                </li>
+                                            </ul>
+                                            <h5><a href="portfolio-details-video.html">New business idea platform</a></h5>
+                                            <h6><a href="portfolio.html">Financial</a></h6>
+                                        </div>
+                                    </div>
+                                </div>-->
+
+            </div>
+
+        </h:form>
+    </div>
+
+    <div id="bottom">
+        <ui:insert name="bottom">
+            <ui:include src="Include/Footer.xhtml" />
+        </ui:insert>
+    </div>
+</html>
+

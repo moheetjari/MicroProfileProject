@@ -21,7 +21,7 @@ import token.GenerateToken;
  *
  * @author mohit
  */
-@RegisterRestClient(configKey = "productClient", baseUri = "http://localhost:8080/ReviewProductMP/rest")
+@RegisterRestClient(configKey = "productClient", baseUri = "http://localhost:8086/ReviewProductMP/rest")
 @ApplicationScoped
 @Path("/product")
 public interface ProductClient {

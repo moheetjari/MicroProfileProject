@@ -49,12 +49,20 @@ public class ProductServlet extends HttpServlet {
             out.println("<body>");
             out.println("<h1>Servlet ProductServlet at " + request.getContextPath() + "</h1>");
             out.println("<table border ='1'>");
-            out.println("<tr><td>Product Name</td>");
+            out.println("<tr><td>Id</td>");
+            out.println("<td>CategoryId</td>");
+            out.println("<td>Product Name</td>");
+            out.println("<td>Product Image</td>");
+            out.println("<td>Reference Link</td>");
             try {
                 products = productclient.getAvailableProducts();
 
                 for (Object[] o : products) {
-                    out.println("<tr><td>" + o[2] + "</td></tr>");
+                    out.println("<tr><td>" + o[0] + "</td>");
+                    out.println("<td>" + o[1] + "</td>");
+                    out.println("<td>" + o[2] + "</td>");
+                    out.println("<td>" + o[3] + "</td>");
+                    out.println("<td>" + o[4] + "</td></tr>");
                 }
                 out.println("</table>");
             } catch (Exception e) {

@@ -1,0 +1,11 @@
+com/mycompany/mavenproject1/service/DepartmentClient.class
+com/mycompany/mavenproject1/entity/DepartmentTB_.class
+com/mycompany/mavenproject1/entity/DepartmentTB.class
+com/mycompany/mavenproject1/entity/EmployeeTB_.class
+com/mycompany/mavenproject1/config/BootStrap.class
+com/mycompany/mavenproject1/config/Producers.class
+com/mycompany/mavenproject1/service/HealthCheckService.class
+com/mycompany/mavenproject1/config/CrossOriginResourceSharingFilter.class
+com/mycompany/mavenproject1/entity/EmployeeTB.class
+com/mycompany/mavenproject1/service/EmployeeResource.class
+com/mycompany/mavenproject1/model/EmployeeModel.class

@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <div id="top">
+            <ui:insert name="top">
+                <ui:include src="Include/Header.xhtml"/>
+            </ui:insert>
+        </div>
+        <div id="content">
+            <!-- Breadcrumb Area -->
+            
+            <!--// Breadcrumb Area -->
+
+            <!-- Main Content -->
+            <main class="main-content">
+
+                <!-- Shop Page Area -->
+                <div class="tm-section shop-page-area bg-white tm-padding-section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-9 col-12 order-1 order-lg-2">
+                                
+                                <h:form id="productsdata">
+                                    <div class="tm-shop-products">
+                                        <div class="row mt-50-reverse">                                   
+                                            <c:if test="${not empty productManagedBean.productsbycateogry}">
+                                                <c:forEach var="pro1" items="#{productManagedBean.productsbycateogry}">
+                                                    <!-- Single Product -->
+                                                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt-50">
+                                                        <div class="tm-product">
+                                                            <div class="tm-product-image">
+                                                                <h:commandLink class="tm-product-imagelink" action="#{productManagedBean.getProduct(pro1.productId)}">                                                                    
+                                                                    
+                                                                    <p:graphicImage value="../assets/productimages/#{pro1.productImage}" style="width: 500px;height: 500px;"/>
+                                                                </h:commandLink>
+                                                                
+                                                            </div>
+                                                            <div class="tm-product-content">
+                                                                <h5 class="tm-product-title"><a href="product-details.html">#{pro1.productName}</a></h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>                                                    
+                                                    <!--// Single Product -->
+                                                </c:forEach>
+                                            </c:if>
+                                            <c:otherwise>
+                                                <c:forEach var="pro" items="#{productManagedBean.products}">
+                                                    <!-- Single Product -->
+                                                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 mt-50">
+                                                        <div class="tm-product">
+                                                            <div class="tm-product-image">
+                                                                <h:commandLink class="tm-product-imagelink" action="#{productManagedBean.getProduct(pro.productId)}">
+                                                                    <p:graphicImage value="../assets/productimages/#{pro.productImage}" style="width: 500px;height: 500px;"/>
+                                                                </h:commandLink>
+                                                            </div>
+                                                            <div class="tm-product-content">
+                                                                <h5 class="tm-product-title"><a href="product-details.html">#{pro.productName}</a></h5>
+                                                               
+                                                            </div>
+                                                        </div>
+                                                    </div>                                                    
+                                                    <!--// Single Product -->
+                                                </c:forEach>
+                                            </c:otherwise>
+                                        </div>
+                                    </div>
+                                </h:form>
+                                <div class="tm-pagination mt-50">
+                                    <ul>
+                                        <li class="is-active"><a href="shop.html">1</a></li>
+                                        <li><a href="shop.html">2</a></li>
+                                        <li><a href="shop.html">3</a></li>
+                                        <li><a href="shop.html">Next Page</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-12 order-2 order-lg-1">
+                                <div class="widgets sidebar-widgets3 sticky-sidebar">
+
+                                    <!-- Single Widget -->
+                                    <div class="single-widget widget-categories">
+                                        <h5 class="widget-title">Categories</h5>
+                                        <ul>
+                                            <h:form>
+                                                <c:forEach var="item" items="#{categoryManagedBean.categorys}">
+                                                    <li>
+                                                        <h:commandLink value="#{item.categoryName}">
+                                                            <f:ajax event="click" listener="#{productManagedBean.productByCategory(item.categoryId)}" render="productsdata"/>
+                                                        </h:commandLink>
+                                                    </li>
+                                                </c:forEach>
+                                            </h:form>
+                                        </ul>
+                                    </div>
+                                    <!--// Single Widget -->
+
+                                    
+
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// Shop Page Area -->
+
+            </main>
+            <!--// Main Content -->
+        </div>
+        <div id="bottom">
+            <ui:insert name="bottom">
+                <ui:include src="master/Footer.xhtml"/>
+            </ui:insert>
+        </div>
+    </h:body>
+</html>
+

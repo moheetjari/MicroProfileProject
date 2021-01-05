@@ -1,0 +1,8 @@
+com/mycompany/testfront/config/BootStrap.class
+com/mycompany/testfront/config/Producers.class
+servlets/AddEmployee.class
+com/mycompany/testfront/service/HealthCheckService.class
+com/mycompany/testfront/service/ExampleService.class
+servlets/TestServlet.class
+com/mycompany/testfront/service/EmployeeClient.class
+com/mycompany/testfront/config/CrossOriginResourceSharingFilter.class

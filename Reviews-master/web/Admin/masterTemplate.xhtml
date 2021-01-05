@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <style type="text/css">
+            .ui-stack {
+                z-index: 1000;
+            }
+        </style>
+        <h:form>
+            <p:stack icon="images/stack.png" expanded="false">
+                <p:menuitem value="UserRole" icon="images/userrole.png" url="userroleindex.xhtml"/>
+                <p:menuitem value="Users" icon="images/user.png" url="userindex.xhtml"/>
+                <p:menuitem value="Role" icon="images/role.png" url="Roleindex.xhtml"/>
+            </p:stack>
+        </h:form>
+
+        <b:navBar>
+            <b:navbarLinks>
+                
+                <b:dropMenu value="USERS">
+                    <b:navLink value="User Role" href="userroleindex.xhtml"></b:navLink>
+                    <b:navLink value="User" href="userindex.xhtml"></b:navLink>
+                    <b:navLink value="Role" href="Roleindex.xhtml"></b:navLink>
+                </b:dropMenu>
+                <b:dropMenu value="PRODUCTS">
+                    <b:navLink value="Category" href="categoryindex.xhtml"></b:navLink>
+                    <b:navLink value="Product" href="productindex.xhtml"></b:navLink>
+                    <b:navLink value="Rating Criteria" href="ratingcriteriaindex.xhtml"></b:navLink>
+                    <b:navLink value="Category Rating Criteria" href="categoryratingcriteria.xhtml"></b:navLink>
+                </b:dropMenu>
+                <b:dropMenu value="OTHERS">
+                    <b:navLink value="Company" href="company.xhtml"></b:navLink>
+                    <b:navLink value="Genre" href="genre.xhtml"></b:navLink>
+                    <b:navLink value="Publisher" href="publisher.xhtml"></b:navLink>
+                    <b:navLink value="Author" href="author.xhtml"></b:navLink>
+                    
+                </b:dropMenu>
+            </b:navbarLinks>
+            <h:form class="navbar-form navbar-left hidden-md hidden-sm hidden-xs" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control"/>
+                </div>
+                <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                <b:commandButton action="#{loginManagedBean.logout()}" value="LOGOUT"></b:commandButton>
+            </h:form>
+            <!-- Following line is needed for TBS 3.0.1 (panel content overflow issue) -->
+            <b:navbarLinks pull="right"><b:navLink value="    " href="#"></b:navLink></b:navbarLinks>
+            
+        </b:navBar>
+
+    </h:body>
+</html>
+

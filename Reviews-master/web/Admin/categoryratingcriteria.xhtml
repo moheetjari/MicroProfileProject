@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <div id="top">
+            <ui:insert name="top">
+                <ui:include src="masterTemplate.xhtml"/>
+            </ui:insert>
+        </div>
+        <style type="text/css">
+            .ui-row-editor .ui-row-editor-pencil {
+                margin-left:8px;
+            }
+        </style>
+
+        <f:view>
+
+            <p:dialog widgetVar="dlg1" header="Add Company" >
+
+
+
+
+                <h:form>
+                    <h1><h:outputText value="Create/Edit"/></h1>
+                    <p:panelGrid columns="2">
+                        
+                        <p:outputLabel value="CategoryId:" for="categoryId" />
+                        <p:selectOneMenu id="categoryId" value="#{categoryratingcriteriaManagedBean.categoryId}" required="true" requiredMessage="The CategoryId field is required.">
+                            TODO: update below reference to list of available items
+                            <f:selectItem itemLabel="Select" itemValue="" noSelectionOption="true"/>
+                            <f:selectItems value="#{categoryManagedBean.categorys}" var="item" itemLabel="#{item.categoryName}" itemValue="#{item.categoryId}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="RatingCriteriaId:" for="ratingCriteriaId" />
+                        <p:selectOneMenu id="ratingCriteriaId" value="#{categoryratingcriteriaManagedBean.ratingcriteriaId}" required="true" requiredMessage="The RatingCriteriaId field is required.">
+                            TODO: update below reference to list of available items
+                            <f:selectItem itemLabel="Select" itemValue="" noSelectionOption="true"/>
+                            <f:selectItems value="#{ratingCriteriaManagedBean.ratingcriteriases}" var="item" itemLabel="#{item.criteriaName}" itemValue="#{item.ratingCriteriaId}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton value="SAVE" action="#{categoryratingcriteriaManagedBean.addCategoryratingcriteria()}" />
+                </h:form>
+
+
+            </p:dialog>
+
+
+            <h:form id="form">
+                <p:growl id="msgs" showDetail="true"/>
+                <h1><h:outputText value="Category Rating Criterias"/></h1>
+                <p:commandButton value="Add Category Rating Criteria" type="button" onclick="PF('dlg1').show();" />
+                <p:dataTable value="#{categoryratingcriteriaManagedBean.categoryratingcriterias}" var="item" editable="true" style="margin-bottom: 20px" paginator="true" rows="15">
+                    <p:ajax event="rowEdit" listener="#{categoryratingcriteriaManagedBean.onRowEdit}" update=":form:msgs" />
+                    <p:ajax event="rowEditCancel" listener="#{categoryratingcriteriaManagedBean.onRowCancelUser}" update=":form:msgs" />
+                    
+                    <p:column headerText="Category">
+                        <p:cellEditor>
+                            <f:facet name="output"><h:outputText value="#{item.categoryId.categoryName}"/></f:facet>
+                            <f:facet name="input"> 
+                                <p:selectOneMenu id="categoryId" value="#{categoryratingcriteriaManagedBean.categoryId}" required="true" requiredMessage="The CategoryId field is required.">
+                                    <!-- TODO: update below reference to list of available items-->
+                                    <f:selectItem itemLabel="Select" itemValue="" noSelectionOption="true"/>
+                                    <f:selectItems value="#{categoryManagedBean.categorys}" var="item1" itemLabel="#{item1.categoryName}" itemValue="#{item1.categoryId}"/>
+                                </p:selectOneMenu>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                    <p:column headerText="Criteria Name">
+                        <p:cellEditor>
+                            <f:facet name="output"><h:outputText value="#{item.ratingCriteriaId.criteriaName}"/></f:facet>
+                            <f:facet name="input"> 
+                                <p:selectOneMenu id="ratingCriteriaId" value="#{categoryratingcriteriaManagedBean.ratingcriteriaId}" required="true" requiredMessage="The RatingCriteriaId field is required.">
+                                    <!-- TODO: update below reference to list of available items-->
+                                    <f:selectItem itemLabel="Select" itemValue="" noSelectionOption="true"/>
+                                    <f:selectItems value="#{ratingCriteriaManagedBean.ratingcriteriases}" var="item2" itemLabel="#{item2.criteriaName}" itemValue="#{item2.ratingCriteriaId}"/>
+                                </p:selectOneMenu>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                    <p:column>
+                        <p:rowEditor/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Delete"/>
+                        </f:facet>
+                        <p:commandLink action="#{categoryratingcriteriaManagedBean.deleteCategoryratingcriteria(item.categoryRatingCriteriaId)}" value="Delete" />
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

@@ -21,7 +21,7 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
  *
  * @author mohit
  */
-@RegisterRestClient(configKey = "categoryClient", baseUri = "http://localhost:8080/ReviewCategoryMP/rest")
+@RegisterRestClient(configKey = "categoryClient", baseUri = "http://localhost:8085/ReviewCategoryMP/rest")
 @ApplicationScoped
 @Path("/category")
 public interface CategoryClient {

@@ -1,0 +1,3 @@
+#!/bin/sh
+mvn clean package && docker build -t 22012/TestFront .
+docker rm -f TestFront 2>/dev/null || true && docker run -it --name TestFront -p 8080:8080 -p 4848:4848 -p 8181:8181 --name TestFront 22012/TestFront
