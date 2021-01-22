@@ -1,0 +1,3 @@
+#!/bin/sh
+mvn clean package
+docker build -t 22012/ExamEmployee .

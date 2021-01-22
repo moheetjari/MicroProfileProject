@@ -1,0 +1,8 @@
+com/mycompany/examemployeeclient/service/HealthCheckService.class
+com/mycompany/examemployeeclient/service/ExampleService.class
+com/mycompany/examemployee/entity/EmployeeTB.class
+com/mycompany/examemployeeclient/service/EmployeeClient.class
+com/mycompany/examemployeeclient/config/BootStrap.class
+com/mycompany/examemployee/servlets/TestServlet.class
+com/mycompany/examemployeeclient/config/Producers.class
+com/mycompany/examemployeeclient/config/CrossOriginResourceSharingFilter.class
